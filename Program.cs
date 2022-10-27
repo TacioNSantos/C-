@@ -24,21 +24,21 @@ namespace ConsoleApplication1
 
         static void Questao2()
         {
-           for (int n = 500; n <= 1000; n++)
-           {
-               if (n %17 == 0 || n %31 == 0)
-               {
-                   Console.WriteLine(n);
-               }
-               
-           }
+            for (int n = 500; n <= 1000; n++)
+            {
+                if (n % 17 == 0 || n % 31 == 0)
+                {
+                    Console.WriteLine(n);
+                }
+
+            }
         }
 
         static void Questao3()
         {
             for (int F = 50; F <= 65; F++)
             {
-                double C = (5/9f *(F-32));
+                double C = (5 / 9f * (F - 32));
                 Console.WriteLine("{0}°F  |   {1}°C", F, C);
             }
         }
@@ -50,12 +50,14 @@ namespace ConsoleApplication1
 
             while (validacao)
             {
-                Console.WriteLine("Candidato 1");
-                Console.WriteLine("Candidato 2");
-                Console.WriteLine("Candidato 3");
-                Console.WriteLine("Candidato 4");
-                Console.WriteLine("Nulo 5");
-                Console.WriteLine("Branco 6");
+                Console.WriteLine("Informe o candidato");
+                Console.WriteLine("===================");
+                Console.WriteLine("1 - Candidato");
+                Console.WriteLine("2 - Candidato");
+                Console.WriteLine("3 - Candidato");
+                Console.WriteLine("4 - Candidato");
+                Console.WriteLine("5 - Nulo");
+                Console.WriteLine("6 - Branco");
                 int op = int.Parse(Console.ReadLine());
                 switch (op)
                 {
@@ -87,17 +89,30 @@ namespace ConsoleApplication1
                         branco++;
                         total++;
                         break;
-
+                    default:
+                        Console.WriteLine("Informe corretamente!!!");
+                        break;
                 }
             }
 
-            Console.WriteLine("Candidato 1 recebeu: {0}", c1);
+            Console.WriteLine("O candidato 1 recebeu: {0}", c1);
+            Console.WriteLine("O candidato 2 recebeu: {0}", c2);
+            Console.WriteLine("O candidato 3 recebeu: {0}", c3);
+            Console.WriteLine("O condidato 4 recebeu: {0}", c4);
+            Console.WriteLine("O total de votos brancos: {0}", branco);
+            Console.WriteLine("O total de votos brancos: {0}", nulo);
+            float percBranco = branco * 100 / total;
+            float percNulo = nulo * 100 / total;
+            Console.WriteLine("O percentual de votos brancos: {0}%", percBranco);
+            Console.WriteLine("O percentual de votos nulos: {0}%", percNulo);
+
         }
 
+            
         static void Main(string[] args)
         {
+
             Questao4();
-            
         }
     }
 }
